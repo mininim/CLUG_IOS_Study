@@ -12,57 +12,72 @@ class ViewController: UIViewController {
     @IBOutlet weak var idField:UITextField!
     @IBOutlet weak var passwordField:UITextField!
     
-    @IBAction func touchUpSetButton(_ sender : UIButton) {
-        
-//        UserInformation.shared.id = nameField.text
-//        UserInformation.shared.password = passwordField.text
-//
+    @IBOutlet weak var signInButton: UIButton!{
+        didSet{
+            signInButton.isEnabled = false
+        }
     }
     
     
+    @IBAction func signInButtonTapped(_ sender: Any) {
+        
+        if UserInformation.shared.signInCheck(id: idField.text!, password: passwordField.text! ){
+            //스토리보드 객체 생성, name은 스토리보드의 기본인 Main
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+            //컨트롤러 객체 생성, Storyboard ID에 이름 설정(이동할 VC에 설정한 Storyboard ID)
+            let secondVC: SignInSuccessViewController = storyboard.instantiateViewController(withIdentifier: "SignInSuccessViewController") as! SignInSuccessViewController
+
+            //기본값이 fullScreen이므로 해당 라인은 생략 가능
+            secondVC.modalPresentationStyle = .fullScreen
+            self.present(secondVC, animated: true, completion: nil)
+            
+            
+            
+        }else {
+            print("아이디 비번 확인하십쇼오오오오오오오")
+        }
+        
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        print("ViewController의 view가 메모리에 로드됨")
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-        
-        print("ViewController의 view가 화면에 보여질 예정")
+        self.idField.addTarget(self, action: #selector(self.textFieldsDidChange(_:)), for: .editingChanged)
+        self.passwordField.addTarget(self, action: #selector(self.textFieldsDidChange(_:)), for: .editingChanged)
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("ViewController의 view가 화면에 보여짐")
+    @objc private func textFieldsDidChange(_ sender: Any?) {
+//        print("textFieldsDidBeginEditing 실행")
+        buttonEnableIfValidInput()
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("ViewController의 view가 화면에서 사라질 예정 ")
+    
+    //유효성 검사를 통한 버튼 활성화
+    func buttonEnableIfValidInput(){
+        if self.isvalidatetextfieldinput()  == true {
+            signInButton.isEnabled = true
+            return
+        }else {
+            signInButton.isEnabled = false
+            return
+        }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("ViewController의 view가 화면에서 사라짐")
+    //유효성 검사
+    func isvalidatetextfieldinput()-> Bool{
+        
+        if idField.text?.isEmpty == false , passwordField.text?.isEmpty == false {
+            return true
+        }else{
+            return false
+        }
+        
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        print("ViewController의 view가 subview를 레이아웃하려함")
-    }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        print("ViewController의 view가 subview를 레이아웃함")
-    }
-
 }
 
