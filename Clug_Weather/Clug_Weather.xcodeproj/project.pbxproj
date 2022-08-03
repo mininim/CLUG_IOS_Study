@@ -19,6 +19,10 @@
 		BEED2368289919CA0024A474 /* JsonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED2367289919CA0024A474 /* JsonTableViewController.swift */; };
 		BEED236B289933F20024A474 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEED236A289933F20024A474 /* Main.storyboard */; };
 		BEED236D2899350E0024A474 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED236C2899350E0024A474 /* CountryListViewController.swift */; };
+		BEFF40CA2899374600E300EB /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF40C92899374600E300EB /* WeatherData.swift */; };
+		BEFF40CC2899EB5900E300EB /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF40CB2899EB5900E300EB /* CityListViewController.swift */; };
+		BEFF40CE289A089900E300EB /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF40CD289A089900E300EB /* CityTableViewCell.swift */; };
+		BEFF40D2289A225300E300EB /* CityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF40D1289A225300E300EB /* CityDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		BEED2367289919CA0024A474 /* JsonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTableViewController.swift; sourceTree = "<group>"; };
 		BEED236A289933F20024A474 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BEED236C2899350E0024A474 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
+		BEFF40C92899374600E300EB /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		BEFF40CB2899EB5900E300EB /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
+		BEFF40CD289A089900E300EB /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		BEFF40D1289A225300E300EB /* CityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,9 @@
 				BE23368B2897B7D100C8E21F /* SceneDelegate.swift */,
 				BEED236A289933F20024A474 /* Main.storyboard */,
 				BEED236C2899350E0024A474 /* CountryListViewController.swift */,
+				BEFF40D4289A227500E300EB /* CityListTable */,
+				BEFF40D1289A225300E300EB /* CityDetailsViewController.swift */,
+				BEFF40C92899374600E300EB /* WeatherData.swift */,
 				BE2336922897B7D300C8E21F /* Assets.xcassets */,
 				BE2336942897B7D300C8E21F /* LaunchScreen.storyboard */,
 				BE2336972897B7D300C8E21F /* Info.plist */,
@@ -91,6 +102,15 @@
 				BEED2367289919CA0024A474 /* JsonTableViewController.swift */,
 			);
 			path = testingBeforeDeveloping;
+			sourceTree = "<group>";
+		};
+		BEFF40D4289A227500E300EB /* CityListTable */ = {
+			isa = PBXGroup;
+			children = (
+				BEFF40CB2899EB5900E300EB /* CityListViewController.swift */,
+				BEFF40CD289A089900E300EB /* CityTableViewCell.swift */,
+			);
+			path = CityListTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,14 +185,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEFF40D2289A225300E300EB /* CityDetailsViewController.swift in Sources */,
 				BE23368E2897B7D100C8E21F /* ViewController.swift in Sources */,
 				BEED236D2899350E0024A474 /* CountryListViewController.swift in Sources */,
 				BE23368A2897B7D100C8E21F /* AppDelegate.swift in Sources */,
+				BEFF40CC2899EB5900E300EB /* CityListViewController.swift in Sources */,
 				BEED23622898F4F40024A474 /* CustomTableViewCell.swift in Sources */,
 				BEED2366289917220024A474 /* Friend.swift in Sources */,
 				BEED2364289910E70024A474 /* SecondViewController.swift in Sources */,
 				BEED2368289919CA0024A474 /* JsonTableViewController.swift in Sources */,
+				BEFF40CA2899374600E300EB /* WeatherData.swift in Sources */,
 				BE23368C2897B7D100C8E21F /* SceneDelegate.swift in Sources */,
+				BEFF40CE289A089900E300EB /* CityTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
